@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using TMPro;
+using UnityEngine.UI;
 
 public class Quest : MonoBehaviour
 {
@@ -33,12 +35,98 @@ public class Quest : MonoBehaviour
     [Header("System Point")]
     public TMP_Text pointText;
     public int point;
-    private float totalPoint;
+    public static float totalPoint;
+
+    [Header("System Timer")]
+    public int increaseTime;
+    public int decreaseTime;
+    public Slider timerSlider;
+
+    [Header("System PowerUp")]
+    public Button[] powerUps;
+    private int nomorJawabanBenar;
 
     void Start()
     {
+
+        Debug.Log(TimerGame.isStop + " isStop");
+
+        totalPoint = 0;
+
         RandomNomorSoal();
+
         GenerateQuest();
+    }
+
+    // * powerup help jawaban benar
+    public void ButtonPowerUpTrueAnswer() // * powerup 1
+    {
+        // * mematikan fungsi powerup
+        powerUps[1].interactable = false;
+
+        for (int i = 0; i < jawabanTexts.Length; i++)
+        {
+            if (jawabanTexts[i].text == controlQuest[nomorQuest].soals[randomSoals[nomorSoal]].elementSoal.jawabans[controlQuest[nomorQuest].soals[randomSoals[nomorSoal]].elementSoal.jawabanBenar])
+            {
+                Debug.Log(i + "Nomor Benar");
+
+                nomorJawabanBenar = i;
+
+                break;
+            }
+        }
+
+        // * menonaktifkan gameobject
+        for (int i = 0; i < jawabanTexts.Length; i++)
+        {
+            if (i != nomorJawabanBenar)
+            {
+                jawabanTexts[i].transform.parent.gameObject.SetActive(false);
+            }
+        }
+
+    }
+
+    // * powerup help 50:50
+    public void ButtonPowerUpFifty() // * powerup 0
+    {
+
+        // * mematikan fungsi powerup
+        powerUps[0].interactable = false;
+
+        for (int i = 0; i < jawabanTexts.Length; i++)
+        {
+            if (jawabanTexts[i].text == controlQuest[nomorQuest].soals[randomSoals[nomorSoal]].elementSoal.jawabans[controlQuest[nomorQuest].soals[randomSoals[nomorSoal]].elementSoal.jawabanBenar])
+            {
+                Debug.Log(i + "Nomor Benar");
+
+                nomorJawabanBenar = i;
+
+                break;
+            }
+        }
+
+        Debug.Log("Break");
+
+        // * menonaktifkan game object
+        // * a - 1 && a + 1
+        if (nomorJawabanBenar - 1 <= 0)
+        {
+            jawabanTexts[jawabanTexts.Length - 1].transform.parent.gameObject.SetActive(false);
+        }
+        else
+        {
+            jawabanTexts[nomorJawabanBenar - 1].transform.parent.gameObject.SetActive(false);
+        }
+
+        if (nomorJawabanBenar + 1 >= jawabanTexts.Length)
+        {
+            jawabanTexts[0].transform.parent.gameObject.SetActive(false);
+        }
+        else
+        {
+            jawabanTexts[nomorJawabanBenar + 1].transform.parent.gameObject.SetActive(false);
+        }
     }
 
     // * random nomor soal
@@ -70,10 +158,16 @@ public class Quest : MonoBehaviour
     {
         RandomNomorJawaban();
 
+        // * melakukan random generate quest
         soalText.text = controlQuest[nomorQuest].soals[randomSoals[nomorSoal]].elementSoal.soal;
 
         for (int i = 0; i < jawabanTexts.Length; i++)
         {
+
+            // * mengaktifkan kembali gameobject setelah powerup
+            jawabanTexts[i].transform.parent.gameObject.SetActive(true);
+
+            // * melakukan random generate jawaban 
             jawabanTexts[i].text = controlQuest[nomorQuest].soals[randomSoals[nomorSoal]].elementSoal.jawabans[randomJawabans[i]];
         }
     }
@@ -88,15 +182,20 @@ public class Quest : MonoBehaviour
             Debug.Log("Benar");
 
             totalPoint += point;
+
+            timerSlider.value += increaseTime;
         }
         else
         {
             Debug.Log("Salah");
 
+            // * jika point lebih dari atau sama 0 maka jika menjawab salah point dikurangi
             if (totalPoint >= 0)
             {
                 totalPoint -= (point / 2);
             }
+
+            timerSlider.value -= decreaseTime;
         }
 
         nomorSoal++;
@@ -105,6 +204,9 @@ public class Quest : MonoBehaviour
         // * menghitung jumlah round game
         if (nomorSoal == gameRound)
         {
+            // * menghentikan waktu jika game sudah berakhir
+            TimerGame.isStop = true;
+
             panelHasil.transform.GetChild(0).GetComponent<TMP_Text>().text = "Selamat semua soal telah dijawab";
             panelHasil.transform.GetChild(1).gameObject.SetActive(false);
             panelHasil.SetActive(true);
@@ -116,6 +218,11 @@ public class Quest : MonoBehaviour
             GenerateQuest();
         }
 
+        // * mengaktifkan kembali waktu setelah powerup time stop
+        if (TimerGame.isTimeStop == true)
+        {
+            TimerGame.isTimeStop = false;
+        }
     }
 
     //* next soal
@@ -126,5 +233,11 @@ public class Quest : MonoBehaviour
         nomorSoal++;
 
         GenerateQuest();
+    }
+
+    // * Button Main Menu
+    public void ButtonMainMenu()
+    {
+        SceneManager.LoadScene(2);
     }
 }
