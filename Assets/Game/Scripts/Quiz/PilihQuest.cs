@@ -10,6 +10,6 @@ public class PilihQuest : MonoBehaviour
     public void ButtonLoadInGame(int nomorQuest)
     {
         Quest.nomorQuest = nomorQuest;
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(1);
     }
 }

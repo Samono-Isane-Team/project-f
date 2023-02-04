@@ -46,8 +46,14 @@ public class Quest : MonoBehaviour
     public Button[] powerUps;
     private int nomorJawabanBenar;
 
+    [Header("System Rating / Star")]
+    public GameObject[] stars;
+    public static int countTrueAnswer;
+
     void Start()
     {
+
+        countTrueAnswer = 0;
 
         Debug.Log(TimerGame.isStop + " isStop");
 
@@ -184,15 +190,21 @@ public class Quest : MonoBehaviour
             totalPoint += point;
 
             timerSlider.value += increaseTime;
+
+            countTrueAnswer++;
         }
         else
         {
             Debug.Log("Salah");
 
-            // * jika point lebih dari atau sama 0 maka jika menjawab salah point dikurangi
-            if (totalPoint >= 0)
+            // * jika point lebih dari atau sama dengan 0 maka jika menjawab salah point dikurangi
+            if (totalPoint > 0)
             {
                 totalPoint -= (point / 2);
+            }
+            else if (totalPoint == 0)
+            {
+                totalPoint = 0;
             }
 
             timerSlider.value -= decreaseTime;
@@ -212,6 +224,42 @@ public class Quest : MonoBehaviour
             panelHasil.SetActive(true);
 
             pointText.text = "Nilai Akhir Anda : " + totalPoint.ToString();
+
+            //TODO system star
+            // * 10 soal >= 8 jawaban benar = 3 star / >= 5 jawaban benar = 2 star / >= 3 jawaban benar = 1 star / 0 >= 0 = 0 star
+            if (countTrueAnswer >= gameRound)
+            {
+                // * 3 star
+                for (int i = 0; i < 3; i++)
+                {
+                    stars[i].SetActive(true);
+                }
+            }
+            else if (countTrueAnswer >= gameRound / 2 && countTrueAnswer != gameRound)
+            {
+                // * 2 star
+                for (int i = 0; i < 2; i++)
+                {
+                    stars[i].SetActive(true);
+                }
+            }
+            else if (Quest.countTrueAnswer >= gameRound / 4 && Quest.countTrueAnswer != gameRound)
+            {
+                // * 1 star
+                for (int i = 0; i < 1; i++)
+                {
+                    stars[i].SetActive(true);
+                }
+            }
+            else
+            {
+                // * 0 star
+                // for (int i = 0; i < 0; i++)
+                // {
+                //     stars[i].SetActive(true);
+                // }
+            }
+
         }
         else
         {
@@ -238,6 +286,6 @@ public class Quest : MonoBehaviour
     // * Button Main Menu
     public void ButtonMainMenu()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(0);
     }
 }
