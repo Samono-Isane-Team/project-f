@@ -24,7 +24,7 @@ public class PilihQuest : MonoBehaviour
     public void ButtonLoadInGame(int nomorQuest)
     {
         Quest.nomorQuest = nomorQuest;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     // * load highscore
@@ -64,6 +64,12 @@ public class PilihQuest : MonoBehaviour
         }
 
         LoadHighscore();
+    }
+
+    // * back to main menu
+    public void ButtonBackToMainMenu(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 
 }

@@ -284,8 +284,8 @@ public class Quest : MonoBehaviour
     }
 
     // * Button Main Menu
-    public void ButtonMainMenu()
+    public void ButtonPilihQuiz()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }
