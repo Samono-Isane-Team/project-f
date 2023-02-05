@@ -99,7 +99,6 @@ public class HighScore : MonoBehaviour
         {
             inputFieldName.interactable = false;
             buttonMainMenu.interactable = true;
-            Debug.Log("Test");
         }
     }
 
