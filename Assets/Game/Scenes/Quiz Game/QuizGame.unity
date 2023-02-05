@@ -1857,7 +1857,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '50 : 50'
+  m_text: 50%
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1884,11 +1884,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
+  m_fontSize: 37.5
   m_fontSizeBase: 50
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 50
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 30
   m_fontSizeMax: 50
   m_fontStyle: 0
   m_HorizontalAlignment: 2
@@ -2923,7 +2923,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 812281622}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1865176843}
+        m_TargetAssemblyTypeName: Quest, Assembly-CSharp
+        m_MethodName: ButtonMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &812281622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3698,13 +3710,10 @@ MonoBehaviour:
   textTimer: {fileID: 289451937}
   panelResult: {fileID: 1386992074}
   textResult: {fileID: 1509745194}
-  textPoint: {fileID: 0}
+  textPoint: {fileID: 1578667182}
   timeStopButton: {fileID: 2055340481}
-  gameRound: 4
-  stars:
-  - {fileID: 246685473}
-  - {fileID: 827859403}
-  - {fileID: 1410640821}
+  quest: {fileID: 1865176843}
+  highScore: {fileID: 617833591}
 --- !u!1 &1080148541
 GameObject:
   m_ObjectHideFlags: 0
@@ -6496,6 +6505,7 @@ MonoBehaviour:
   - {fileID: 246685473}
   - {fileID: 827859403}
   - {fileID: 1410640821}
+  countTrueAnswer: 0
   highScore: {fileID: 617833591}
 --- !u!4 &1865176844
 Transform:
@@ -6736,8 +6746,8 @@ MonoBehaviour:
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
-  m_fontSizeMax: 100
+  m_fontSizeMin: 30
+  m_fontSizeMax: 50
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -7047,7 +7057,7 @@ MonoBehaviour:
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 100
+  m_fontSizeMax: 50
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512

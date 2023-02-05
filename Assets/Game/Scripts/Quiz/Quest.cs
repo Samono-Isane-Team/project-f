@@ -48,15 +48,13 @@ public class Quest : MonoBehaviour
 
     [Header("System Rating / Star")]
     public GameObject[] stars;
-    public static int countTrueAnswer;
+    public int countTrueAnswer;
 
     [Header("System Highscore")]
     public HighScore highScore;
 
     void Start()
     {
-
-        countTrueAnswer = 0;
 
         Debug.Log(TimerGame.isStop + " isStop");
 
@@ -228,40 +226,7 @@ public class Quest : MonoBehaviour
 
             pointText.text = "Nilai Akhir Anda : " + totalPoint.ToString();
 
-            //TODO system star
-            // * 10 soal >= 8 jawaban benar = 3 star / >= 5 jawaban benar = 2 star / >= 3 jawaban benar = 1 star / 0 >= 0 = 0 star
-            if (countTrueAnswer >= gameRound)
-            {
-                // * 3 star
-                for (int i = 0; i < 3; i++)
-                {
-                    stars[i].SetActive(true);
-                }
-            }
-            else if (countTrueAnswer >= gameRound / 2 && countTrueAnswer != gameRound)
-            {
-                // * 2 star
-                for (int i = 0; i < 2; i++)
-                {
-                    stars[i].SetActive(true);
-                }
-            }
-            else if (Quest.countTrueAnswer >= gameRound / 4 && Quest.countTrueAnswer != gameRound)
-            {
-                // * 1 star
-                for (int i = 0; i < 1; i++)
-                {
-                    stars[i].SetActive(true);
-                }
-            }
-            else
-            {
-                // * 0 star
-                // for (int i = 0; i < 0; i++)
-                // {
-                //     stars[i].SetActive(true);
-                // }
-            }
+            StarRating();
 
             // TODO highscore
             highScore.UpdateHighscore();
@@ -276,6 +241,35 @@ public class Quest : MonoBehaviour
         if (TimerGame.isTimeStop == true)
         {
             TimerGame.isTimeStop = false;
+        }
+    }
+
+    // * star rating
+    public void StarRating()
+    {
+        if (countTrueAnswer >= gameRound)
+        {
+            //3 star
+            for (int i = 0; i < 3; i++)
+            {
+                stars[i].SetActive(true);
+            }
+        }
+        else if (countTrueAnswer >= gameRound / 2 && countTrueAnswer != gameRound)
+        {
+            //2 star
+            for (int i = 0; i < 2; i++)
+            {
+                stars[i].SetActive(true);
+            }
+        }
+        else if (countTrueAnswer < gameRound / 2 && countTrueAnswer != 0)
+        {
+            //1 star
+            for (int i = 0; i < 1; i++)
+            {
+                stars[i].SetActive(true);
+            }
         }
     }
 

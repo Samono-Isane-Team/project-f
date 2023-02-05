@@ -95,6 +95,12 @@ public class HighScore : MonoBehaviour
             textNamePlayer[newIndexNamePlayer].text = "";
             textScorePlayer[newIndexHighscore].text = "";
         }
+        else
+        {
+            inputFieldName.interactable = false;
+            buttonMainMenu.interactable = true;
+            Debug.Log("Test");
+        }
     }
 
     // * menyimpan data highscore

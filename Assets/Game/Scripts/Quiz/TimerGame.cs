@@ -23,8 +23,10 @@ public class TimerGame : MonoBehaviour
     public static bool isTimeStop;
 
     [Header("System Rating / Star")]
-    public int gameRound;
-    public GameObject[] stars;
+    public Quest quest;
+
+    [Header("System Highscore")]
+    public HighScore highScore;
 
     private void Start()
     {
@@ -63,40 +65,11 @@ public class TimerGame : MonoBehaviour
                     textResult.text = "Waktu habis";
                     textPoint.text = "Nilai Akhir Anda : " + Quest.totalPoint.ToString();
 
-                    //TODO system star
-                    // * 10 soal >= 8 jawaban benar = 3 star / >= 5 jawaban benar = 2 star / >= 3 jawaban benar = 1 star / 0 >= 0 = 0 star
-                    if (Quest.countTrueAnswer >= gameRound)
-                    {
-                        // * 3 star
-                        for (int i = 0; i < 3; i++)
-                        {
-                            stars[i].SetActive(true);
-                        }
-                    }
-                    else if (Quest.countTrueAnswer >= gameRound / 2 && Quest.countTrueAnswer != gameRound)
-                    {
-                        // * 2 star
-                        for (int i = 0; i < 2; i++)
-                        {
-                            stars[i].SetActive(true);
-                        }
-                    }
-                    else if (Quest.countTrueAnswer >= gameRound / 4 && Quest.countTrueAnswer != gameRound)
-                    {
-                        // * 1 star
-                        for (int i = 0; i < 1; i++)
-                        {
-                            stars[i].SetActive(true);
-                        }
-                    }
-                    else
-                    {
-                        // * 0 star
-                        // for (int i = 0; i < 0; i++)
-                        // {
-                        //     stars[i].SetActive(true);
-                        // }
-                    }
+                    // TODO system rating 
+                    quest.StarRating();
+
+                    // TODO system highscore
+                    highScore.UpdateHighscore();
                 }
             }
         }
