@@ -50,6 +50,9 @@ public class Quest : MonoBehaviour
     public GameObject[] stars;
     public static int countTrueAnswer;
 
+    [Header("System Highscore")]
+    public HighScore highScore;
+
     void Start()
     {
 
@@ -220,7 +223,7 @@ public class Quest : MonoBehaviour
             TimerGame.isStop = true;
 
             panelHasil.transform.GetChild(0).GetComponent<TMP_Text>().text = "Selamat semua soal telah dijawab";
-            panelHasil.transform.GetChild(1).gameObject.SetActive(false);
+            // panelHasil.transform.GetChild(1).gameObject.SetActive(false); //* untuk button next tapi udh gk kepakek
             panelHasil.SetActive(true);
 
             pointText.text = "Nilai Akhir Anda : " + totalPoint.ToString();
@@ -259,6 +262,9 @@ public class Quest : MonoBehaviour
                 //     stars[i].SetActive(true);
                 // }
             }
+
+            // TODO highscore
+            highScore.UpdateHighscore();
 
         }
         else
