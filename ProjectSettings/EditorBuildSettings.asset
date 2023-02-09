@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/Quiz Game/QuizGame.unity
     guid: a724e05c244cf0c43a6ead672720a851
-  - enabled: 0
-    path: Assets/Game/Scenes/Top Down/TopDownGame.unity
-    guid: 7be4c7abed49d5d40bfeffab5e0230b2
+  - enabled: 1
+    path: Assets/Game/Scenes/Platformer/Level1.unity
+    guid: c80bf06266c9a404f98f80b5aa3ee16d
   m_configObjects: {}

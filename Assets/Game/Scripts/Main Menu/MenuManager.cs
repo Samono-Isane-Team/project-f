@@ -6,15 +6,8 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
 
-    // * fungsi memulai game baru
-    public void NewGame(string SceneName)
-    {
-        SceneManager.LoadScene(SceneName);
-        PlayerPrefs.DeleteAll();
-    }
-
     // * fungsi melanjutkan permainan
-    public void ContinueGame(string SceneName)
+    public void LoadLevelGame(string SceneName)
     {
         SceneManager.LoadScene(SceneName);
     }

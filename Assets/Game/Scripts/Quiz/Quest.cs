@@ -12,7 +12,7 @@ public class Quest : MonoBehaviour
 
     [Header("Menampilkan Soal dan Jawaban")]
     // * menampilkan soal yang mana
-    public static int nomorQuest;
+    public static int pilihSoal;
     // * menampilkan text soal
     public TMP_Text soalText;
     // * menampilkan text jawaban
@@ -55,14 +55,17 @@ public class Quest : MonoBehaviour
 
     void Start()
     {
-
         Debug.Log(TimerGame.isStop + " isStop");
+
+        // ! testing HG berdasarkan soal
+        Debug.Log(pilihSoal);
 
         totalPoint = 0;
 
         RandomNomorSoal();
 
         GenerateQuest();
+
     }
 
     // * powerup help jawaban benar
@@ -73,7 +76,7 @@ public class Quest : MonoBehaviour
 
         for (int i = 0; i < jawabanTexts.Length; i++)
         {
-            if (jawabanTexts[i].text == controlQuest[nomorQuest].soals[randomSoals[nomorSoal]].elementSoal.jawabans[controlQuest[nomorQuest].soals[randomSoals[nomorSoal]].elementSoal.jawabanBenar])
+            if (jawabanTexts[i].text == controlQuest[pilihSoal].soals[randomSoals[nomorSoal]].elementSoal.jawabans[controlQuest[pilihSoal].soals[randomSoals[nomorSoal]].elementSoal.jawabanBenar])
             {
                 Debug.Log(i + "Nomor Benar");
 
@@ -103,7 +106,7 @@ public class Quest : MonoBehaviour
 
         for (int i = 0; i < jawabanTexts.Length; i++)
         {
-            if (jawabanTexts[i].text == controlQuest[nomorQuest].soals[randomSoals[nomorSoal]].elementSoal.jawabans[controlQuest[nomorQuest].soals[randomSoals[nomorSoal]].elementSoal.jawabanBenar])
+            if (jawabanTexts[i].text == controlQuest[pilihSoal].soals[randomSoals[nomorSoal]].elementSoal.jawabans[controlQuest[pilihSoal].soals[randomSoals[nomorSoal]].elementSoal.jawabanBenar])
             {
                 Debug.Log(i + "Nomor Benar");
 
@@ -166,7 +169,7 @@ public class Quest : MonoBehaviour
         RandomNomorJawaban();
 
         // * melakukan random generate quest
-        soalText.text = controlQuest[nomorQuest].soals[randomSoals[nomorSoal]].elementSoal.soal;
+        soalText.text = controlQuest[pilihSoal].soals[randomSoals[nomorSoal]].elementSoal.soal;
 
         for (int i = 0; i < jawabanTexts.Length; i++)
         {
@@ -175,7 +178,7 @@ public class Quest : MonoBehaviour
             jawabanTexts[i].transform.parent.gameObject.SetActive(true);
 
             // * melakukan random generate jawaban 
-            jawabanTexts[i].text = controlQuest[nomorQuest].soals[randomSoals[nomorSoal]].elementSoal.jawabans[randomJawabans[i]];
+            jawabanTexts[i].text = controlQuest[pilihSoal].soals[randomSoals[nomorSoal]].elementSoal.jawabans[randomJawabans[i]];
         }
     }
 
@@ -184,10 +187,8 @@ public class Quest : MonoBehaviour
     {
         TMP_Text currentJawaban = EventSystem.current.currentSelectedGameObject.transform.GetChild(0).GetComponent<TMP_Text>();
 
-        if (currentJawaban.text == controlQuest[nomorQuest].soals[randomSoals[nomorSoal]].elementSoal.jawabans[controlQuest[nomorQuest].soals[randomSoals[nomorSoal]].elementSoal.jawabanBenar])
+        if (currentJawaban.text == controlQuest[pilihSoal].soals[randomSoals[nomorSoal]].elementSoal.jawabans[controlQuest[pilihSoal].soals[randomSoals[nomorSoal]].elementSoal.jawabanBenar])
         {
-            Debug.Log("Benar");
-
             totalPoint += point;
 
             timerSlider.value += increaseTime;
@@ -196,8 +197,6 @@ public class Quest : MonoBehaviour
         }
         else
         {
-            Debug.Log("Salah");
-
             // * jika point lebih dari atau sama dengan 0 maka jika menjawab salah point dikurangi
             if (totalPoint > 0)
             {
@@ -212,7 +211,7 @@ public class Quest : MonoBehaviour
         }
 
         nomorSoal++;
-        Debug.Log(nomorSoal);
+        // Debug.Log(nomorSoal);
 
         // * menghitung jumlah round game
         if (nomorSoal == gameRound)
@@ -286,6 +285,14 @@ public class Quest : MonoBehaviour
     // * Button Main Menu
     public void ButtonPilihQuiz()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
+    }
+
+    // * Unload minigame
+    public static bool unloadScene;
+    public void UnLoadMiniGame(string nameScene)
+    {
+        SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName(nameScene));
+        unloadScene = true;
     }
 }
