@@ -11,6 +11,7 @@ public class HighScore : MonoBehaviour
     public string[] namePlayer;
     public float[] scorePlayer;
     private int newIndexNamePlayer;
+
     // * UI
     public TMP_InputField inputFieldName;
     public Button buttonSave;
@@ -22,11 +23,17 @@ public class HighScore : MonoBehaviour
     private void Start()
     {
         LoadHighscore();
-    }
 
-    private void Update()
-    {
-
+        // ! testing HG berdasarkan soal
+        // Debug.Log("INI KONTROL QUEST DARI HS KE-" + Quest.pilihSoal);
+        if (Quest.pilihSoal == 0)
+        {
+            Debug.Log("INI SOAL PERTAMA");
+        }
+        else if (Quest.pilihSoal == 1)
+        {
+            Debug.Log("INI SOAL KEDUA");
+        }
     }
 
     // * mengecek isi input field
@@ -49,11 +56,30 @@ public class HighScore : MonoBehaviour
     {
         for (int i = 0; i < namePlayer.Length; i++)
         {
-            namePlayer[i] = PlayerPrefs.GetString("NamePlayer" + i, "Player" + i);
-            textNamePlayer[i].text = namePlayer[i];
 
-            scorePlayer[i] = PlayerPrefs.GetFloat("ScorePlayer" + i, 1);
-            textScorePlayer[i].text = scorePlayer[i].ToString();
+            // namePlayer[i] = PlayerPrefs.GetString("NamePlayerSatu" + i, "Player" + i);
+            // textNamePlayer[i].text = namePlayer[i];
+
+            // scorePlayer[i] = PlayerPrefs.GetFloat("ScorePlayerSatu" + i, 1);
+            // textScorePlayer[i].text = scorePlayer[i].ToString();
+
+
+            if (Quest.pilihSoal == 0)
+            {
+                namePlayer[i] = PlayerPrefs.GetString("NamePlayerSatu" + i, "Player" + i);
+                textNamePlayer[i].text = namePlayer[i];
+
+                scorePlayer[i] = PlayerPrefs.GetFloat("ScorePlayerSatu" + i, 1);
+                textScorePlayer[i].text = scorePlayer[i].ToString();
+            }
+            else if (Quest.pilihSoal == 1)
+            {
+                namePlayer[i] = PlayerPrefs.GetString("NamePlayerDua" + i, "Player" + i);
+                textNamePlayer[i].text = namePlayer[i];
+
+                scorePlayer[i] = PlayerPrefs.GetFloat("ScorePlayerDua" + i, 1);
+                textScorePlayer[i].text = scorePlayer[i].ToString();
+            }
 
         }
     }
@@ -105,15 +131,35 @@ public class HighScore : MonoBehaviour
     // * menyimpan data highscore
     public void ButtonSave()
     {
+        // * input nama pemain
         namePlayer[newIndexNamePlayer] = inputFieldName.text;
 
+        // * update tampilan highscore
         textNamePlayer[newIndexNamePlayer].text = namePlayer[newIndexNamePlayer];
         textScorePlayer[newIndexNamePlayer].text = scorePlayer[newIndexNamePlayer].ToString();
 
-        for (int i = 0; i < namePlayer.Length; i++)
+        // for (int i = 0; i < namePlayer.Length; i++)
+        // {
+        //     PlayerPrefs.SetString("NamePlayer" + i, namePlayer[i]);
+        //     PlayerPrefs.SetFloat("ScorePlayer" + i, scorePlayer[i]);
+        // }
+
+        // ! testing HG berdasarkan soal
+        if (Quest.pilihSoal == 0)
         {
-            PlayerPrefs.SetString("NamePlayer" + i, namePlayer[i]);
-            PlayerPrefs.SetFloat("ScorePlayer" + i, scorePlayer[i]);
+            for (int i = 0; i < namePlayer.Length; i++)
+            {
+                PlayerPrefs.SetString("NamePlayerSatu" + i, namePlayer[i]);
+                PlayerPrefs.SetFloat("ScorePlayerSatu" + i, scorePlayer[i]);
+            }
+        }
+        else if (Quest.pilihSoal == 1)
+        {
+            for (int i = 0; i < namePlayer.Length; i++)
+            {
+                PlayerPrefs.SetString("NamePlayerDua" + i, namePlayer[i]);
+                PlayerPrefs.SetFloat("ScorePlayerDua" + i, scorePlayer[i]);
+            }
         }
 
         buttonSave.interactable = false;
