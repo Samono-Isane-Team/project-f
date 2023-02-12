@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class JoystickPlayer : MonoBehaviour
 {
-
     [Header("Movement Variable")]
     [SerializeField] float speedPlayer;
     [SerializeField] float jumpPlayer;
@@ -15,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private bool flip = true;
     private enum MovementState { idle, running, jumping, falling };
 
+    public VariableJoystick variableJoystick;
     [SerializeField] private Animator anim;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private BoxCollider2D coll;
@@ -23,23 +23,30 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        MovePlayer();
-
-        JumpPlayer();
-
         UpdateAnimateState();
     }
 
+    public void FixedUpdate()
+    {
+        MovePlayer();
+    }
+
+    // * cara player bergerak
     private void MovePlayer()
     {
-        dirX = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(dirX * speedPlayer, rb.velocity.y);
+        // dirX = Input.GetAxisRaw("Horizontal");
+        // rb.velocity = new Vector2(dirX * speedPlayer, rb.velocity.y);
+        rb.velocity = new Vector2(variableJoystick.Horizontal * speedPlayer, rb.velocity.y);
     }
 
     // * mengatur cara player lompat
-    private void JumpPlayer()
+    public void JumpPlayer()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        // if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        // {
+        //     rb.velocity = new Vector2(rb.velocity.x, jumpPlayer);
+        // }
+        if (IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPlayer);
         }
@@ -51,12 +58,13 @@ public class PlayerMovement : MonoBehaviour
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, 0.1f, jumpableGround);
     }
 
+
     // * mengatur pergantian animasi
-    private void UpdateAnimateState()
+    public void UpdateAnimateState()
     {
         MovementState state;
 
-        if (dirX > 0f)
+        if (variableJoystick.Horizontal > 0f)
         {
             state = MovementState.running;
             if (!flip)
@@ -64,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
                 FlipCharacter();
             }
         }
-        else if (dirX < 0f)
+        else if (variableJoystick.Horizontal < 0f)
         {
             state = MovementState.running;
             if (flip)

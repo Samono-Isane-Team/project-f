@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using TMPro;
 using UnityEngine.UI;
@@ -53,7 +52,7 @@ public class Quest : MonoBehaviour
     [Header("System Highscore")]
     public HighScore highScore;
 
-    void Start()
+    private void Start()
     {
         Debug.Log(TimerGame.isStop + " isStop");
 
@@ -214,6 +213,7 @@ public class Quest : MonoBehaviour
         // Debug.Log(nomorSoal);
 
         // * menghitung jumlah round game
+        // * permainan selesai
         if (nomorSoal == gameRound)
         {
             // * menghentikan waktu jika game sudah berakhir
@@ -225,6 +225,11 @@ public class Quest : MonoBehaviour
 
             pointText.text = "Nilai Akhir Anda : " + totalPoint.ToString();
 
+            // TODO unlock system
+            UnlockLevel.currentLevel += 1;
+            PlayerPrefs.SetInt("Level", UnlockLevel.currentLevel);
+
+            // TODO start system
             StarRating();
 
             // TODO highscore
@@ -280,19 +285,5 @@ public class Quest : MonoBehaviour
         nomorSoal++;
 
         GenerateQuest();
-    }
-
-    // * Button Main Menu
-    public void ButtonPilihQuiz()
-    {
-        SceneManager.LoadScene(0);
-    }
-
-    // * Unload minigame
-    public static bool unloadScene;
-    public void UnLoadMiniGame(string nameScene)
-    {
-        SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName(nameScene));
-        unloadScene = true;
     }
 }

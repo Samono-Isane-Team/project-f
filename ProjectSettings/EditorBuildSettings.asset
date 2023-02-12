@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/Platformer/Level1.unity
     guid: c80bf06266c9a404f98f80b5aa3ee16d
+  - enabled: 1
+    path: Assets/Game/Scenes/Ensiklopedia.unity
+    guid: ed6a4da7e6dceb04095f158ca8292949
   m_configObjects: {}

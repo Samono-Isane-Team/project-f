@@ -58,12 +58,17 @@ public class TimerGame : MonoBehaviour
                 }
                 else
                 {
+                    // * permainan selesai
                     isStop = true;
                     Debug.Log(isStop + " isStop");
 
                     panelResult.SetActive(true);
                     textResult.text = "Waktu habis";
                     textPoint.text = "Nilai Akhir Anda : " + Quest.totalPoint.ToString();
+
+                    // TODO unlock system
+                    UnlockLevel.currentLevel += 1;
+                    PlayerPrefs.SetInt("Level", UnlockLevel.currentLevel);
 
                     // TODO system rating 
                     quest.StarRating();
