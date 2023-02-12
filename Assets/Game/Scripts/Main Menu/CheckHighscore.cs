@@ -1,13 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using TMPro;
 
-public class PilihQuest : MonoBehaviour
-{
 
+public class CheckHighscore : MonoBehaviour
+{
     [Header("System Highscore")]
     public GameObject panelHighscore;
     public string[] namePlayers;
@@ -15,41 +13,6 @@ public class PilihQuest : MonoBehaviour
     public TMP_Text[] textNames;
     public TMP_Text[] textScores;
 
-    private void Start()
-    {
-        // LoadHighscore();
-    }
-
-
-    // ! cek soal doang gk guna
-    public void CekSoal(int cekSoal)
-    {
-        Debug.Log(Quest.pilihSoal);
-
-        Quest.pilihSoal = cekSoal;
-
-        Debug.Log(Quest.pilihSoal);
-
-        if (Quest.pilihSoal == 0)
-        {
-            Debug.Log("INI SOAL PERTAMA" + Quest.pilihSoal);
-        }
-        else if (Quest.pilihSoal == 1)
-        {
-            Debug.Log("INI SOAL KEDUA" + Quest.pilihSoal);
-        }
-        else
-        {
-            Debug.Log("TIDAK KEDUANYA" + Quest.pilihSoal);
-        }
-    }
-
-    // * memilih quest
-    public void ButtonLoadInGame(int nomorQuest)
-    {
-        Quest.pilihSoal = nomorQuest;
-        SceneManager.LoadScene(2);
-    }
 
     // * button load highscore
     public void LoadHighscore(int nomorQuest)
@@ -59,12 +22,6 @@ public class PilihQuest : MonoBehaviour
 
         for (int i = 0; i < scorePlayers.Length; i++)
         {
-            // scorePlayers[i] = PlayerPrefs.GetFloat("ScorePlayer" + i, 0);
-            // textScores[i].text = scorePlayers[i].ToString();
-
-            // namePlayers[i] = PlayerPrefs.GetString("NamePlayer" + i, "Player" + i);
-            // textNames[i].text = namePlayers[i];
-
             if (Quest.pilihSoal == 0)
             {
                 scorePlayers[i] = PlayerPrefs.GetFloat("ScorePlayerSatu" + i, 0);
@@ -101,12 +58,8 @@ public class PilihQuest : MonoBehaviour
     public void ButtonResetHighscore()
     {
 
-        // Quest.pilihSoal = nomorQuest;
-
         for (int i = 0; i < scorePlayers.Length; i++)
         {
-            // PlayerPrefs.DeleteKey("ScorePlayer" + i);
-            // PlayerPrefs.DeleteKey("NamePlayer" + i);
 
             if (Quest.pilihSoal == 0)
             {
@@ -123,12 +76,4 @@ public class PilihQuest : MonoBehaviour
         }
 
     }
-
-    // * back to main menu
-    public void ButtonBackToMainMenu(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
-    }
-
 }
-

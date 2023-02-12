@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class LoadSceneManager : MonoBehaviour
+public class PlatformerLoadMinigame : MonoBehaviour
 {
 
     [SerializeField] private GameObject player;
@@ -12,9 +12,8 @@ public class LoadSceneManager : MonoBehaviour
 
     private void Update()
     {
-
-        // * mengaktifkan player kembali jika surrender
-        if (Quest.unloadScene == true)
+        // * menonaktifkan scene minigame jika player surrender.
+        if (GameManager.unloadScene == true)
         {
             player.SetActive(true);
         }
@@ -40,9 +39,10 @@ public class LoadSceneManager : MonoBehaviour
     }
 
     // * memanggil scene lain ke dalam game
-    public void LoadMiniGame(string nameScene)
+    public void LoadMiniGame(int nomorQuest)
     {
-        SceneManager.LoadScene(nameScene, LoadSceneMode.Additive);
+        Quest.pilihSoal = nomorQuest;
+        SceneManager.LoadScene("QuizGame", LoadSceneMode.Additive);
     }
 
 
