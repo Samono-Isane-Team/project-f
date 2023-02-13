@@ -226,8 +226,11 @@ public class Quest : MonoBehaviour
             pointText.text = "Nilai Akhir Anda : " + totalPoint.ToString();
 
             // TODO unlock system
-            UnlockLevel.currentLevel += 1;
-            PlayerPrefs.SetInt("Level", UnlockLevel.currentLevel);
+            if (pilihSoal == UnlockLevel.currentLevel)
+            {
+                UnlockLevel.currentLevel += 1;
+                PlayerPrefs.SetInt("Level", UnlockLevel.currentLevel);
+            }
 
             // TODO start system
             StarRating();

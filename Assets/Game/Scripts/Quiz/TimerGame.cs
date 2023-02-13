@@ -67,8 +67,11 @@ public class TimerGame : MonoBehaviour
                     textPoint.text = "Nilai Akhir Anda : " + Quest.totalPoint.ToString();
 
                     // TODO unlock system
-                    UnlockLevel.currentLevel += 1;
-                    PlayerPrefs.SetInt("Level", UnlockLevel.currentLevel);
+                    if (Quest.pilihSoal == UnlockLevel.currentLevel)
+                    {
+                        UnlockLevel.currentLevel += 1;
+                        PlayerPrefs.SetInt("Level", UnlockLevel.currentLevel);
+                    }
 
                     // TODO system rating 
                     quest.StarRating();

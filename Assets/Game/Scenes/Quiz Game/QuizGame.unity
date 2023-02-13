@@ -323,6 +323,131 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &152855857
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 152855859}
+  - component: {fileID: 152855858}
+  m_Layer: 0
+  m_Name: Control Soal Level (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &152855858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152855857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c97cd4b114d2545b9e2f5ce3a729fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soals:
+  - elementSoal:
+      soal: Jika 1 ditambah 1?
+      jawabans:
+      - 1
+      - 2
+      - 3
+      - 4
+      jawabanBenar: 1
+  - elementSoal:
+      soal: Berapa 2 + 2 ?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: 2 - 2 =
+      jawabans:
+      - 0
+      - 2
+      - 6
+      - 9
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+--- !u!4 &152855859
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152855857}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 417356980}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &179746801
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,6 +1115,131 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289451935}
   m_CullTransparentMesh: 1
+--- !u!1 &295719435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 295719437}
+  - component: {fileID: 295719436}
+  m_Layer: 0
+  m_Name: Control Soal Level (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &295719436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295719435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c97cd4b114d2545b9e2f5ce3a729fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soals:
+  - elementSoal:
+      soal: Jika 1 ditambah 1?
+      jawabans:
+      - 1
+      - 2
+      - 3
+      - 4
+      jawabanBenar: 1
+  - elementSoal:
+      soal: Berapa 2 + 2 ?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: 2 - 2 =
+      jawabans:
+      - 0
+      - 2
+      - 6
+      - 9
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+--- !u!4 &295719437
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295719435}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 417356980}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &312940051
 GameObject:
   m_ObjectHideFlags: 0
@@ -1259,6 +1509,131 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313638230}
   m_CullTransparentMesh: 1
+--- !u!1 &337747390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 337747392}
+  - component: {fileID: 337747391}
+  m_Layer: 0
+  m_Name: Control Soal Level (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &337747391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337747390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c97cd4b114d2545b9e2f5ce3a729fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soals:
+  - elementSoal:
+      soal: Jika 1 ditambah 1?
+      jawabans:
+      - 1
+      - 2
+      - 3
+      - 4
+      jawabanBenar: 1
+  - elementSoal:
+      soal: Berapa 2 + 2 ?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: 2 - 2 =
+      jawabans:
+      - 0
+      - 2
+      - 6
+      - 9
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+--- !u!4 &337747392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337747390}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 417356980}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &340137641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1528,6 +1903,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 381474381}
   m_CullTransparentMesh: 1
+--- !u!1 &417356979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 417356980}
+  m_Layer: 0
+  m_Name: Bank Soal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &417356980
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417356979}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1515141159}
+  - {fileID: 337747392}
+  - {fileID: 295719437}
+  - {fileID: 152855859}
+  - {fileID: 1531208335}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &434770122
 GameObject:
   m_ObjectHideFlags: 0
@@ -2136,7 +2547,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &617833591
 MonoBehaviour:
@@ -3303,83 +3714,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &939579109
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 939579111}
-  - component: {fileID: 939579110}
-  m_Layer: 0
-  m_Name: Control Soal (Bahasa)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &939579110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 939579109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3c97cd4b114d2545b9e2f5ce3a729fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soals:
-  - elementSoal:
-      soal: 1+ 1 =
-      jawabans:
-      - 1
-      - 2
-      - 3
-      - 4
-      jawabanBenar: 1
-  - elementSoal:
-      soal: 2 + 2 =
-      jawabans:
-      - 4
-      - 5
-      - 6
-      - 7
-      jawabanBenar: 0
-  - elementSoal:
-      soal: 3 - 3 =
-      jawabans:
-      - 0
-      - 2
-      - 6
-      - 9
-      jawabanBenar: 0
-  - elementSoal:
-      soal: '2 * 2 = '
-      jawabans:
-      - 4
-      - 5
-      - 6
-      - 7
-      jawabanBenar: 0
---- !u!4 &939579111
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 939579109}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1026406986
 GameObject:
   m_ObjectHideFlags: 0
@@ -3397,7 +3731,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1026406987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3631,7 +3965,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1048920196
 MonoBehaviour:
@@ -5536,7 +5870,7 @@ GameObject:
   - component: {fileID: 1515141159}
   - component: {fileID: 1515141160}
   m_Layer: 0
-  m_Name: Control Soal (Matematika)
+  m_Name: Control Soal Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5549,13 +5883,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1515141158}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 417356980}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1515141160
 MonoBehaviour:
@@ -5602,6 +5936,179 @@ MonoBehaviour:
       - 6
       - 7
       jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+--- !u!1 &1531208333
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1531208335}
+  - component: {fileID: 1531208334}
+  m_Layer: 0
+  m_Name: Control Soal Level (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1531208334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531208333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c97cd4b114d2545b9e2f5ce3a729fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soals:
+  - elementSoal:
+      soal: Jika 1 ditambah 1?
+      jawabans:
+      - 1
+      - 2
+      - 3
+      - 4
+      jawabanBenar: 1
+  - elementSoal:
+      soal: Berapa 2 + 2 ?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: 2 - 2 =
+      jawabans:
+      - 0
+      - 2
+      - 6
+      - 9
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+  - elementSoal:
+      soal: Berapa 2 dikali 2?
+      jawabans:
+      - 4
+      - 5
+      - 6
+      - 7
+      jawabanBenar: 0
+--- !u!4 &1531208335
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531208333}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 417356980}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1544897166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5611,7 +6118,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1092160177336714722, guid: 000f172e969b08b409bd0f1eed72d428, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1092160177336714722, guid: 000f172e969b08b409bd0f1eed72d428, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6354,16 +6861,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controlQuest:
   - {fileID: 1515141160}
-  - {fileID: 939579110}
+  - {fileID: 337747391}
+  - {fileID: 295719436}
+  - {fileID: 152855858}
+  - {fileID: 1531208334}
   soalText: {fileID: 1313534120}
   jawabanTexts:
   - {fileID: 884864212}
   - {fileID: 727619452}
   - {fileID: 2125988612}
   - {fileID: 312940053}
-  randomSoals: 00000000010000000200000003000000
+  randomSoals: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
   randomJawabans: 00000000010000000200000003000000
-  gameRound: 4
+  gameRound: 10
   panelHasil: {fileID: 1386992074}
   pointText: {fileID: 1578667182}
   point: 10
@@ -6392,7 +6902,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1893367625
 GameObject:
