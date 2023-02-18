@@ -25,4 +25,11 @@ public class GameManager : MonoBehaviour
         Debug.Log("Keluar Aplikasi");
         Application.Quit();
     }
+
+    // * reset game
+    public static void DeleteAllSaveData()
+    {
+        PlayerPrefs.DeleteAll();
+        Debug.Log("All save data deleted.");
+    }
 }
