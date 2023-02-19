@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 
 public class ControllerCard : MonoBehaviour
 {
@@ -31,11 +31,24 @@ public class ControllerCard : MonoBehaviour
     [Tooltip("Tidak perlu diisi")]
     public GameObject currentButtonCard, recentButtonCard;
 
-    [Header("System Win")]
+    [Header("System Win/lose")]
     public GameObject panelEndGame;
+    public TMP_Text textEndGame;
+
+    [Header("System health")]
+    public GameObject[] healths;
+    // * jika ingin menggantinya dengan spirte lain
+    // public Sprite spriteLoseHealth;
+    public int lifeChance;
+
+    [Header("System Audio Effect")]
+    public SfxMencocokanGambar sfxMencocokanGambar;
 
     private void Start()
     {
+
+        // TODO system health
+        lifeChance = healths.Length;
 
         // TODO level system
         LevelSystem();
@@ -146,6 +159,7 @@ public class ControllerCard : MonoBehaviour
         {
             animObject.SetBool("isFlip", true);
             // Debug.Log(EventSystem.current.currentSelectedGameObject.name);
+            sfxMencocokanGambar.AudioMencocokanGambarFlipCard();
 
             currentButtonCard = EventSystem.current.currentSelectedGameObject.gameObject;
 
@@ -163,17 +177,20 @@ public class ControllerCard : MonoBehaviour
                 if (currentButtonCard.GetComponent<AnimSpriteChange>().spriteDepan.name == spriteRecentCard.name)
                 {
                     // buttonCurrentSelected.gameObject.SetActive(false);
-                    Invoke("MatchCard", clipCardFlip.length + 0.2f);
+                    Invoke("MatchCard", clipCardFlip.length + 0.2f); // * jika kartu sama
+                    // sfxMencocokanGambar.AudioMencocokanGambarClipTrue();
                 }
                 else
                 {
-                    Invoke("NotMatchCard", clipCardFlip.length + 0.2f);
+                    Invoke("NotMatchCard", clipCardFlip.length + 0.2f); // * jika kartu tidak sama
+
                 }
 
                 // * limit hanya 2 kartu yang bisa di select
                 for (int i = 0; i < SelectLevelCocokGambar.indexCardCount; i++)
                 {
                     imageCards[i].enabled = false;
+
                 }
 
             }
@@ -182,13 +199,16 @@ public class ControllerCard : MonoBehaviour
         else
         {
             animObject.SetBool("isFlip", false);
+            // sfxMencocokanGambar.AudioMencocokanGambarFlipCard();
         }
     }
 
+    // * berfungsi mencocokan kartu
     private void MatchCard()
     {
         currentButtonCard.SetActive(false);
         recentButtonCard.SetActive(false);
+        sfxMencocokanGambar.AudioMencocokanGambarClipTrue();
 
         spriteRecentCard = null;
 
@@ -198,17 +218,27 @@ public class ControllerCard : MonoBehaviour
             imageCards[i].enabled = true;
         }
 
+        // * kondisi menang game
+        Invoke("WinGame", 0.5f);
+    }
+
+    // * jika menang permaiann
+    private void WinGame()
+    {
         if (isGameDone() == true)
         {
             panelEndGame.SetActive(true);
-        }
 
+            sfxMencocokanGambar.AudioMencocokanGambarWinGame();
+        }
     }
 
+    // * berfungsi jika kartu tidak cocok
     private void NotMatchCard()
     {
         ButtonCard(recentButtonCard.GetComponent<Animator>());
         ButtonCard(currentButtonCard.GetComponent<Animator>());
+        sfxMencocokanGambar.AudioMencocokanGambarFlipCard();
 
         recentButtonCard.GetComponent<Button>().enabled = true;
         currentButtonCard.GetComponent<Button>().enabled = true;
@@ -220,6 +250,30 @@ public class ControllerCard : MonoBehaviour
         {
             imageCards[i].enabled = true;
         }
+
+        // TODO system health
+        if (lifeChance > 0)
+        {
+
+            // healths[healths.Length - lifeChance].GetComponent<Image>().sprite = spriteLoseHealth; // * jika ingin menggantinya dengan spirte lain
+            healths[healths.Length - lifeChance].SetActive(false);
+
+            lifeChance -= 1;
+        }
+        else // * jika kalah game health habis
+        {
+            Invoke("LoseGame", 0.5f);
+        }
+    }
+
+    // * jika kalah permainan
+    private void LoseGame()
+    {
+        Debug.Log("Lose");
+        panelEndGame.SetActive(true);
+        textEndGame.text = "Anda Kalah";
+
+        sfxMencocokanGambar.AudioMencocokanGambarLoseGame();
     }
 
     // * restar game
