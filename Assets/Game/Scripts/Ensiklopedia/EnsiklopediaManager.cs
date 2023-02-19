@@ -15,7 +15,12 @@ public class EnsiklopediaManager : MonoBehaviour
     public Sprite[] spriteAchievement; // * nama diambil dari nama sprite
     public Image imageDetailAchievement;
     public TMP_Text textNamaDetailAchievement;
+    public TMP_Text textLahirDetailAchievement;
+    public TMP_Text textMeninggalDetailAchievement;
     public TMP_Text textKeteranganDetailAchievement;
+
+    public string[] stringLahirDetailAchievement;
+    public string[] stringMeninggalDetailAchievement;
     [TextArea(5, 5)]
     public string[] stringKeteranganAchievement;
     public int[] riwayatAchievement;
@@ -58,6 +63,8 @@ public class EnsiklopediaManager : MonoBehaviour
         imageDetailAchievement.sprite = spriteAchievement[indexAchievement];
         // * update nama dari nama sprite
         textNamaDetailAchievement.text = spriteAchievement[indexAchievement].name;
+        textLahirDetailAchievement.text = stringLahirDetailAchievement[indexAchievement];
+        textMeninggalDetailAchievement.text = stringMeninggalDetailAchievement[indexAchievement];
         // * update keterangan Achievement
         textKeteranganDetailAchievement.text = stringKeteranganAchievement[indexAchievement];
     }

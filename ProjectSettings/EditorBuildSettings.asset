@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Game/Scenes/Ensiklopedia/Ensiklopedia.unity
     guid: ed6a4da7e6dceb04095f158ca8292949
   - enabled: 1
-    path: Assets/Game/Scenes/Platformer/Level2.unity
-    guid: 11b7e801d7402fe4fbcbb4f23a41e985
+    path: Assets/Game/Scenes/Mencocokan Gambar/Mencocokan Gambar.unity
+    guid: dadec326c3134d947b71b747b2ff93d1
+  - enabled: 1
+    path: Assets/Game/Scenes/Mencocokan Gambar/Pilih Level.unity
+    guid: e62c0c6a8f1f8fb4aae4fd5f5f350ac0
   m_configObjects: {}
