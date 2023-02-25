@@ -44,6 +44,9 @@ public class ControllerCard : MonoBehaviour
     [Header("System Audio Effect")]
     public SfxMencocokanGambar sfxMencocokanGambar;
 
+    [Header("System Timer")]
+    TimerMencocokanGambar timerMencocokanGambar;
+
     private void Start()
     {
 
@@ -274,6 +277,9 @@ public class ControllerCard : MonoBehaviour
         textEndGame.text = "Anda Kalah";
 
         sfxMencocokanGambar.AudioMencocokanGambarLoseGame();
+
+        // TODO system timer
+        timerMencocokanGambar.isTimerStart = false;
     }
 
     // * restar game

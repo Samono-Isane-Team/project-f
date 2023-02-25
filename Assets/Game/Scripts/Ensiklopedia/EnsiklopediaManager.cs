@@ -60,9 +60,19 @@ public class EnsiklopediaManager : MonoBehaviour
     public void UpdateDetailAchievement(int indexAchievement)
     {
         // * update sprite dari image
-        imageDetailAchievement.sprite = spriteAchievement[indexAchievement];
-        // * update nama dari nama sprite
-        textNamaDetailAchievement.text = spriteAchievement[indexAchievement].name;
+        Debug.Log(spriteAchievement[indexAchievement]);
+        if (spriteAchievement[indexAchievement] != null)
+        {
+            imageDetailAchievement.sprite = spriteAchievement[indexAchievement];
+            // * update nama dari nama sprite
+            textNamaDetailAchievement.text = spriteAchievement[indexAchievement].name;
+        }
+        else
+        {
+            imageDetailAchievement.gameObject.SetActive(false);
+            // * update nama dari nama sprite
+            textNamaDetailAchievement.text = " ";
+        }
         textLahirDetailAchievement.text = stringLahirDetailAchievement[indexAchievement];
         textMeninggalDetailAchievement.text = stringMeninggalDetailAchievement[indexAchievement];
         // * update keterangan Achievement
