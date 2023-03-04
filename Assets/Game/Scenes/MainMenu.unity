@@ -13048,8 +13048,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipMusik:
-  - {fileID: 8300000, guid: 90726c6569e28fa4b803612f99b9c585, type: 3}
-  - {fileID: 8300000, guid: f3becc8f2f2134443a244f2321e7c1b1, type: 3}
+  - {fileID: 8300000, guid: ee8effccfc369954a97deb7b04fa6014, type: 3}
+  - {fileID: 8300000, guid: 205ed5bd55fb28e4c9afd71970e9f3ce, type: 3}
   audioMusik: {fileID: 1777160766}
 --- !u!1 &1805454739
 GameObject:

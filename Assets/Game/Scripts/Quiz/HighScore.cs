@@ -26,14 +26,14 @@ public class HighScore : MonoBehaviour
 
         // ! testing HG berdasarkan soal
         // Debug.Log("INI KONTROL QUEST DARI HS KE-" + Quest.pilihSoal);
-        if (Quest.pilihSoal == 0)
-        {
-            Debug.Log("INI SOAL PERTAMA");
-        }
-        else if (Quest.pilihSoal == 1)
-        {
-            Debug.Log("INI SOAL KEDUA");
-        }
+        // if (Quest.pilihSoal == 0)
+        // {
+        //     Debug.Log("INI SOAL PERTAMA");
+        // }
+        // else if (Quest.pilihSoal == 1)
+        // {
+        //     Debug.Log("INI SOAL KEDUA");
+        // }
     }
 
     // * mengecek isi input field
