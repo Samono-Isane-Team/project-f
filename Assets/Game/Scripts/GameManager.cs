@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+
+    [Header("Unload minigame")]
+    public static bool unloadScene;
+
     // * berfungsi untuk berganti scene saja
     public void LoadOtherScene(string nameScene)
     {
@@ -12,7 +16,6 @@ public class GameManager : MonoBehaviour
     }
 
     // * Unload minigame platformer
-    public static bool unloadScene;
     public void UnLoadMiniGame(string nameScene)
     {
         SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName(nameScene));

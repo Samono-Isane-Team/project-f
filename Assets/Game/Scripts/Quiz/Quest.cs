@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Quest : MonoBehaviour
 {
@@ -54,10 +55,10 @@ public class Quest : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(TimerGame.isStop + " isStop");
+        // Debug.Log(TimerGame.isStop + " isStop");
 
         // ! testing HG berdasarkan soal
-        Debug.Log(pilihSoal);
+        // Debug.Log(pilihSoal);
 
         totalPoint = 0;
 
@@ -188,6 +189,7 @@ public class Quest : MonoBehaviour
 
         if (currentJawaban.text == controlQuest[pilihSoal].soals[randomSoals[nomorSoal]].elementSoal.jawabans[controlQuest[pilihSoal].soals[randomSoals[nomorSoal]].elementSoal.jawabanBenar])
         {
+            // * jika jawaban benar
             totalPoint += point;
 
             timerSlider.value += increaseTime;
@@ -196,6 +198,7 @@ public class Quest : MonoBehaviour
         }
         else
         {
+            // * jika jawaban salah
             // * jika point lebih dari atau sama dengan 0 maka jika menjawab salah point dikurangi
             if (totalPoint > 0)
             {
@@ -204,6 +207,19 @@ public class Quest : MonoBehaviour
             else if (totalPoint == 0)
             {
                 totalPoint = 0;
+            }
+
+            //! * kurangi nyawa player jika mati
+            if (PlayerLife.currentLifePoint > 0)
+            {
+                PlayerLife.currentLifePoint -= 1;
+            }
+            else
+            {
+                Debug.Log("Yello");
+                // panelHasil.SetActive(true);
+                SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("QuizGame"));
+                GameManager.unloadScene = true;
             }
 
             timerSlider.value -= decreaseTime;
