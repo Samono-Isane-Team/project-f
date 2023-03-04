@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Game/Scenes/MainMenu.unity
-    guid: 666bac52d2368b34e89152d2ef66cd59
+    path: Assets/Game/Scene Dipakai/MainMenu.unity
+    guid: 1ba3b406e3ebeb440bc942696a3483a9
   - enabled: 1
     path: Assets/Game/Scenes/Quiz Game/PilihQuiz.unity
     guid: 8edf59f7659e9154eba5a8e706bfa658
@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/Mencocokan Gambar/Pilih Level.unity
     guid: e62c0c6a8f1f8fb4aae4fd5f5f350ac0
+  - enabled: 1
+    path: Assets/Game/Scenes/Ensiklopedia/Testing.unity
+    guid: d71c13fafb14ef344b6e8701b41b23e3
   m_configObjects: {}
