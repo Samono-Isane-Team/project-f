@@ -6,8 +6,8 @@ using UnityEngine;
 public class EnemyLife : MonoBehaviour
 {
 
-    [Header("Item Reward")]
-    public TMP_Text textItem;
+    // [Header("Item Reward")]
+    // public TMP_Text textItem;
 
     // * fungsi membunuh musuh
     private void OnTriggerEnter2D(Collider2D collider)
@@ -15,9 +15,7 @@ public class EnemyLife : MonoBehaviour
         if (collider.gameObject.CompareTag("Player"))
         {
             PlayerReward.item += 2;
-
-            textItem.text = PlayerReward.item.ToString();
-
+            // textItem.text = PlayerReward.item.ToString();
             Destroy(gameObject);
         }
     }
