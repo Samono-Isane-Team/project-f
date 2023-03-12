@@ -32,6 +32,17 @@ public class PlayerLife : MonoBehaviour
 
     private void Update()
     {
+
+        // * update life point ketika item sudah memenuhi syarat
+        if (PlayerReward.item >= PlayerReward.currenItemToLife)
+        {
+            PlayerReward.item -= PlayerReward.currenItemToLife;
+            currentLifePoint += 1;
+        }
+        // * update text life point ketika terjadi perubahan
+        textTotalLife.text = currentLifePoint.ToString();
+
+        // * player mati
         if (currentLifePoint == 0)
         {
             Debug.Log("Player die");

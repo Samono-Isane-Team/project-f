@@ -10,9 +10,19 @@ public class PlayerReward : MonoBehaviour
     public static int item = 0;
     public TMP_Text textItem;
 
+    [Header("System life point")]
+    public int minimalItemToLife;
+    public static int currenItemToLife;
+
     private void Start()
     {
+        currenItemToLife = minimalItemToLife;
         item = 0;
+        textItem.text = item.ToString();
+    }
+
+    private void Update()
+    {
         textItem.text = item.ToString();
     }
 
@@ -24,9 +34,7 @@ public class PlayerReward : MonoBehaviour
         {
             item++;
             Destroy(collider.gameObject);
-            textItem.text = item.ToString();
         }
-
     }
 
 }
